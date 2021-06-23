@@ -1,5 +1,5 @@
-import { CreateUserController } from "../../../../modules/users/useCases/CreateUserController";
+import { CreateUserController } from "../../../../modules/users/useCases/CreateUser";
 
 const createUserController = new CreateUserController();
 
-export {createUserController}
+export { createUserController };
