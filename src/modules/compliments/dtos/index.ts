@@ -1,0 +1,1 @@
+export { IComplimentRequest } from "./IComplimentRequest";
