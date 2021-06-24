@@ -4,7 +4,7 @@ import { IUserRequest } from "../../dtos";
 import { UsersRepositories } from "../../repositories";
 
 class CreateUser {
-  async execute({ email, name, admin }: IUserRequest): Promise<User> {
+  async execute({ email, name, admin, password }: IUserRequest): Promise<User> {
     const usersRepository = getCustomRepository(UsersRepositories);
 
     if (!email) {
@@ -23,6 +23,7 @@ class CreateUser {
       name,
       email,
       admin,
+      password,
     });
 
     await usersRepository.save(user);

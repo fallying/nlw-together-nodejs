@@ -4,15 +4,14 @@ import { CreateUser } from "./CreateUser";
 
 class CreateUserController {
   async handle(request: Request, response: Response) {
-    const { email, name, admin }: IUserRequest = request.body;
+    const { email, name, admin, password }: IUserRequest = request.body;
 
     const createUser = new CreateUser();
 
-    const user = await createUser.execute({name, email, admin});
+    const user = await createUser.execute({ name, email, admin, password });
 
     return response.json(user);
-
   }
 }
 
-export {CreateUserController}
+export { CreateUserController };
