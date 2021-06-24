@@ -1,1 +1,2 @@
-export { IUserRequest } from './IUserRequest'
+export { IUserRequest } from "./IUserRequest";
+export { IAuthenticateUserRequest } from "./IAuthenticateUserRequest";
