@@ -2,6 +2,7 @@ import { getCustomRepository } from "typeorm";
 import { User } from "../../domain";
 import { IUserRequest } from "../../dtos";
 import { UsersRepositories } from "../../repositories";
+import { hash } from "bcryptjs";
 
 class CreateUser {
   async execute({ email, name, admin, password }: IUserRequest): Promise<User> {
@@ -19,11 +20,13 @@ class CreateUser {
       throw new Error("User already exists");
     }
 
+    const hashedPassword = await hash(password, 8);
+
     const user = usersRepository.create({
       name,
       email,
       admin,
-      password,
+      password: hashedPassword,
     });
 
     await usersRepository.save(user);
