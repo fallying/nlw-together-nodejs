@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { createTagController } from "../factories/controllers/CreateTagController";
+import {
+  createTagController,
+  makeListTagsController,
+} from "../factories/controllers/TagController";
 import { ensureAdmin, ensureAuthenticated } from "../middlewares";
 
 const tagRouter = Router();
@@ -10,5 +13,7 @@ tagRouter.post(
   ensureAdmin,
   createTagController.handle
 );
+
+tagRouter.get("/", makeListTagsController.handle);
 
 export { tagRouter };
