@@ -14,6 +14,6 @@ tagRouter.post(
   createTagController.handle
 );
 
-tagRouter.get("/", makeListTagsController.handle);
+tagRouter.get("/", ensureAuthenticated, makeListTagsController.handle);
 
 export { tagRouter };
