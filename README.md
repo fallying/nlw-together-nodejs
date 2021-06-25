@@ -14,6 +14,6 @@
   - [x] Do not allowed to register tag a tag by non-admin users.
 
 - Compliments Registration
-  - [ ] Do not allowed to register a compliment for themselves.
-  - [ ] Do not allowed to register a compliment to invalid users.
-  - [ ] User need to be authenticated.
+  - [x] Do not allowed to register a compliment for themselves.
+  - [x] Do not allowed to register a compliment to invalid users.
+  - [x] User need to be authenticated.
